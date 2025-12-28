@@ -1,13 +1,14 @@
 # 权重列表
-weights_list: [1,2,3,4,5,6,7,8,9,10]
+weights_list: [1,1,1] # !repeat [1, n]
 
 multiple: 1
 
 # simple shape
 shape_type: "circle" # "square" or ["circle","square"]
-shape_num: 584  # num1 or [num1, num2]
+shape_num: 100  # num1 or [num1, num2]
 
-primitive_dir: "./data/svgs/demo_svgs"
+primitive_dir: "./data/demo_imgs"
+
 photos_dir: "./data/collage_images/example2_Disney/images"
 
 word_file: "./wordle.csv"
@@ -19,26 +20,12 @@ primitive_pos_init_type: "distance_field" # "distance_field","random_within_shap
 is_global_size: False
 is_rotate: True
 is_rotate_random: False
-# initialize_fill_ratio: 0.55
-primitive_fill_ratio: 0.05
-# render_img_size: 800
+primitive_fill_ratio: 0.3
 num_iters: 100
 
 svg_normalized_size: 100
-raster_normalized_size: 100
+raster_normalized_size: 500
 outline_num_segments: 40
-
-# size: 0.02
-# pos: 1.1
-# base_lr:
-#   size: 0.002
-#   angle: 0.05
-#   pos: 0.1
-
-# base_lr:
-#   size: 0.02
-#   angle: 0.05
-#   pos: 1
 
 base_lr:
   size: 0.002
