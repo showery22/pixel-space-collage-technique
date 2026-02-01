@@ -55,7 +55,7 @@ pip install -r requirements.txt
 ```bash
 conda activate psc
 # Generate the outer contour of the element shape.
-python outline_svg.py --config config/config.yaml ----primitive_class any_shape_raster
+python outline_svg.py --config config/config.yaml --primitive_class any_shape_raster
 python main.py --config config/config.yaml --target_shape_mask_dir ./data/target_imgs/s.png \
 --shape_class closed --primitive_class any_shape_raster
 ```
