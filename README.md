@@ -53,20 +53,19 @@ pip install -r requirements.txt
 
 ## Run
 ```bash
-conda activate psc
+# The element format is SVG
+# step1: Generate the outer contour of the element shape.(Preprocess the elements only once)
+python outline_svg.py --config config/config.yaml --primitive_class any_shape_svg --primitive_dir ./data/demo_svgs
+# step2: Generate the result.
+python main.py --config config/config.yaml --target_shape_mask_dir ./data/target_imgs/s.png \
+--shape_class closed --primitive_class any_shape_svg --primitive_dir ./data/demo_svgs
+
 # The element format is grid
 # step1: Generate the outer contour of the element shape.(Preprocess the elements only once)
 python outline_svg.py --config config/config.yaml --primitive_class any_shape_raster --primitive_dir ./data/demo_imgs
 # step2: Generate the result.
 python main.py --config config/config.yaml --target_shape_mask_dir ./data/target_imgs/s.png \
 --shape_class closed --primitive_class any_shape_raster --primitive_dir ./data/demo_imgs
-
-# The element format is SVG
-# step1: Generate the outer contour of the element shape.(Preprocess the elements only once)
-python outline_svg.py --config config/config.yaml --primitive_class any_shape_svg --primitive_dir ./data/demo_svgs
-# step2: Generate the result.
-python main.py --config config/config.yaml --target_shape_mask_dir ./data/target_imgs/s.png \
---shape_class closed --primitive_class any_shape_raster --primitive_dir ./data/demo_svgs
 ```
 
 ## Reference
