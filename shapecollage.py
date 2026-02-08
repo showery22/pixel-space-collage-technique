@@ -366,7 +366,10 @@ class ShapeCollage:
                     self.shapes[i].points = points_2[i]
                 raster_img = svg_to_img(self.shapes,shape_groups,self.render_img_size,self.render_img_size)
 
-                loss_mse = weights_mse(mask_img,raster_img, target_img,scale=5e4)
+                if self.is_global_size:
+                    loss_mse = weights_mse(mask_img,raster_img, target_img,scale=5e4)
+                else:
+                    loss_mse = weights_mse(mask_img,raster_img, target_img,scale=2e4)
 
                 # 排斥损失
                 raster_img_transparency = svg_to_img(self.shapes,shape_groups_transparency,self.render_img_size,self.render_img_size)
